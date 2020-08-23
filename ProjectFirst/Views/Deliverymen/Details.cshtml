@@ -1,0 +1,42 @@
+﻿@model ProjectFirst.Models.Deliveryman
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Deliveryman</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DeliverymanName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DeliverymanName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneNo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PhoneNo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CitizenshipNo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CitizenshipNo)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.DeliverymansID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

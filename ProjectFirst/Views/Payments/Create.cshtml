@@ -1,0 +1,122 @@
+﻿@model ProjectFirst.Models.Payment
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <div class="bg-dark rounded">
+        <p class="nav-link text-white" style="font-size:20px;">Payments &nbsp;<i class="fas fa-chevron-right"></i> Create</p>
+    </div>
+    <div>
+        <ul class="nav nav-tabs" id="tabs" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active btn-outline-info" id="create-tab" data-toggle="tab" href="#Create" role="tab" aria-controls="create" aria-selected="true">Create</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link btn-outline-info" id="index-tab" data-toggle="tab" href="#Index" role="tab" aria-controls="index" aria-selected="true">Index</a>
+            </li>
+        </ul>
+    </div>
+    
+            <div class="tab-content" id="productstabcontent">
+                <div class="tab-pane fade show active" id="Create" role="tabpanel" aria-labelledby="create-tab">
+                    <br />
+                    @using (Html.BeginForm("Create", "Payments"))
+                    {
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-row">
+                            <div class="col-md-4">
+                                <div class="form-horizontal">
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            <label class="control-label">OrderID</label>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <input name="OrderID" class="form-control" />
+                                            <span asp-validation-for="OrderID" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-horizontal">
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            <label class="control-label">ClientID</label>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <select name="ClientID" class="form-control" asp-items="ViewBag.ClientID"></select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-horizontal">
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            <label class="control-label">CoupenCode</label>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <input name="CoupenCode" class="form-control" />
+                                            <span asp-validation-for="CoupenCode" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-horizontal">
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            <label class="control-label">PayedAmount</label>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <input name="PayedAmount" class="form-control" />
+                                            <span asp-validation-for="PayedAmount" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-horizontal">
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            <label class="control-label">Date</label>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <input name="Date" class="form-control" />
+                                            <span asp-validation-for="Date" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-horizontal">
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            <label class="control-label">Code</label>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <input name="Code" class="form-control" />
+                                            <span asp-validation-for="Code" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                    <div class="form-group">
+                                        <input type="submit" value="Create" class="btn btn-default" />
+                                    </div>
+                                </div>
+                                }
+                            </div>
+                        </div>
+
+    <div id="Index" class="tab-pane fade" role="tabpanel" aria-labelledby="index-tab">
+        @Html.ActionLink("Index", "Payments")
+
+    </div>
+</div>
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }

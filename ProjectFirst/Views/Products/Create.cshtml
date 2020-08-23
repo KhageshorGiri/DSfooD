@@ -1,0 +1,72 @@
+﻿@model ProjectFirst.Models.Product
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div>
+    <div class="bg-dark rounded">
+        <p class="nav-link text-white" style="font-size:20px;">Product &nbsp;<i class="fas fa-chevron-right"></i> Create</p>
+    </div>
+    <div>
+        <ul class="nav nav-tabs" id="tabs" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active btn-outline-info" id="create-tab" data-toggle="tab" href="#Create" role="tab" aria-controls="create" aria-selected="true">Create</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link btn-outline-info" id="index-tab" data-toggle="tab" href="#Index" role="tab" aria-controls="index" aria-selected="true">Index</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="tab-content" id="productstabcontent">
+        <div class="tab-pane fade show active" id="Create">
+            <br />
+            @using (Html.BeginForm("Create", "Products"))
+            {
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-row">
+                    <div class="col-md-4">
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label class="control-label">Image</label>
+                                <input name="Image" class="form-control" />
+                                <span asp-validation-for="Image" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                        <div class="form-group">
+                            <label class="control-label">ProductSubCategoryID</label>
+                            <select name="ProductSubCategoryID" class="form-control" asp-items="ViewBag.ProductSubCategoryID"></select>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">SuppliersAttributeID</label>
+                            <input name="SuppliersAttributeID" class="form-control" />
+                            <span asp-validation-for="SuppliersAttributeID" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Quantity</label>
+                            <input name="Quantity" class="form-control" />
+                            <span asp-validation-for="Quantity" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Discount</label>
+                            <input name="Discount" class="form-control" />
+                            <span asp-validation-for="Discount" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Create" class="btn btn-default" />
+                        </div>
+                    </div>
+
+                    }
+                </div>
+    </div>
+
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>@ViewBag.Title</title>
+    <link href="~/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="C:\Users\umesh\.nuget\packages\bootstrap\4.5.1\contentFiles\any\any\wwwroot\css\bootstrap.css" rel="stylesheet" />
+    <script src="~/lib/jquery/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    
+    <link href="~/StyleSheet.css" rel="stylesheet" />
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            $('#Collapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="sidebar fixed-top">
+        <div class="container-fluid">
+            <button id="Collapse" class="nav-item navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </div>
+    <div class="wrapper top">
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <strong>
+                </strong>
+            </div>
+            <ul class="list-unstyled components">
+                <li class="active">@Html.ActionLink("Addresses", "Create", "Addresses")</li>
+                <li>@Html.ActionLink("Clients", "Create", "Clients")</li>
+                <li>@Html.ActionLink("Suppliers", "Create", "Suppliers")</li>
+                <li>@Html.ActionLink("Orders", "Create", "Orders")</li>
+                <li>@Html.ActionLink("Category", "Create", "Categories")</li>
+                <li>@Html.ActionLink("SubCategories", "Create", "ProductSubCategories")</li>
+                <li>@Html.ActionLink("Deliveryman", "Create", "Deliverymen")</li>
+                <li>@Html.ActionLink("Payments", "Create", "Payments")</li>
+                <li>@Html.ActionLink("Municipalities", "Create", "Municipalities")</li>
+                <li>@Html.ActionLink("District", "Create", "Districts")</li>
+                <li>@Html.ActionLink("States", "Create", "States")</li>
+                <li>@Html.ActionLink("DeliveryInformations", "Create", "DeliveryInformations")</li>
+                <li>@Html.ActionLink("GifCard", "Create", "GifCards")</li>
+                <li>@Html.ActionLink("Coupen", "Create", "Coupens")</li>
+                <li>@Html.ActionLink("Comments", "Create", "Comments")</li>
+            </ul>
+        </nav>
+        <div id="content">
+            <div class="container body-content col-md-12 col-sm-12 col-lg-12">
+                <div>
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+
