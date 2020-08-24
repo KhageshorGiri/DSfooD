@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using ProjectFirst.Data;
 using ProjectFirst.Models;
 using System.ComponentModel.DataAnnotations;
+using System.IO;
 
 namespace ProjectFirst.Controllers
 {
@@ -59,6 +60,14 @@ namespace ProjectFirst.Controllers
         {
             if (ModelState.IsValid)
             {
+
+               /* var filename = Path.GetFileName(ImagePath.FileName);
+                var path = Path.Combine(Server.MapPath("~/img"), filename);
+                ImagePath.SaveAs(path);
+                image.ImagePath = "/img/" + filename;
+
+                db.Images.Add(image);
+               */
                 _context.Add(client);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));

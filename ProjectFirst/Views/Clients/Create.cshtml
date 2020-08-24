@@ -4,236 +4,234 @@
     ViewData["Title"] = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<div>
-    <div class="bg-dark rounded">
-        <p class="nav-link text-white" style="font-size:20px;">Product &nbsp;<i class="fas fa-chevron-right"></i> Create</p>
-    </div>
     <div>
-        <ul class="nav nav-tabs" id="tabs" role="tablist">
-            <li class="nav-item">
-                <a class="nav-link active btn-outline-info" id="create-tab" data-toggle="tab" href="#Create" role="tab" aria-controls="create" aria-selected="true">Create</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link btn-outline-info" id="index-tab" data-toggle="tab" href="#Index" role="tab" aria-controls="index" aria-selected="true">Index</a>
-            </li>
-        </ul>
-    </div>
-    <div class="tab-content" id="productstabcontent">
-        <div class="tab-pane fade show active" id="Create" role="tabpanel" aria-labelledby="create-tab">
-            <br />
-            @using (Html.BeginForm("Create", "Clients"))
-            {
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <div class="form-row">
-                    <div class="col-md-4">
-                        <div class="form-horizontal">
-                            <div class="form-group">
-                                <div class="col-md-12">
-                                    <label class="control-label">ClientName</label>
-                                </div>
-                                <div class="col-md-12">
-                                    <input name="ClientName" class="form-control" />
-                                    <span asp-validation-for="ClientName" class="text-danger"></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-horizontal">
-                            <div class="form-group">
-                                <div class="col-md-12">
-                                    <label class="control-label">AddressID</label>
-                                </div>
-                                <div class="col-md-12">
-                                    <input name="AddressID" class="form-control" />
-                                    <span asp-validation-for="AddressID" class="text-danger"></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-horizontal">
-                            <div class="form-group">
-                                <div class="col-md-12">
-                                    <label class="control-label">PermanentAddressID</label>
-                                </div>
-                                <div class="col-md-12">
-                                    <input name="PermanentAddressID" class="form-control" />
-                                    <span asp-validation-for="PermanentAddressID" class="text-danger"></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-horizontal">
-                            <div class="form-group">
-                                <div class="col-md-12">
-                                    <label class="control-label">TemporaryAddressID</label>
-                                </div>
-                                <div class="col-md-12">
-                                    <input name="TemporaryAddressID" class="form-control" />
-                                    <span asp-validation-for="TemporaryAddressID" class="text-danger"></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-horizontal">
-                            <div class="form-group">
-                                <div class="col-md-12">
-                                    <label class="control-label">PhoneNo</label>
-                                </div>
-                                <div class="col-md-12">
-                                    <input name="PhoneNo" class="form-control" />
-                                    <span asp-validation-for="PhoneNo" class="text-danger"></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-horizontal">
-                            <div class="form-group">
-                                <div class="col-md-12">
-                                    <label class="control-label">Location</label>
-                                </div>
-                                <div class="col-md-12">
-                                    <input name="Location" class="form-control" />
-                                    <span asp-validation-for="Location" class="text-danger"></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-horizontal">
-                            <div class="form-group">
-                                <div class="col-md-12">
-                                    <label class="control-label">Email</label>
-                                </div>
-                                <div class="col-md-12">
-                                    <input name="Email" class="form-control" />
-                                    <span asp-validation-for="Email" class="text-danger"></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-horizontal">
-                            <div class="form-group">
-                                <div class="col-md-12">
-                                    <label class="control-label">Password</label>
-                                </div>
-                                <div class="col-md-12">
-                                    <input name="Password" class="form-control" />
-                                    <span asp-validation-for="Password" class="text-danger"></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-horizontal">
-                            <div class="form-group">
-                                <div class="col-md-12">
-                                    <label class="control-label">Role</label>
-                                </div>
-                                <div class="col-md-12">
-                                    <input name="Role" class="form-control" />
-                                    <span asp-validation-for="Role" class="text-danger"></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-horizontal">
-                            <div class="form-group">
-                                <div class="col-md-12">
-                                    <label class="control-label">Image</label>
-                                </div>
-                                <div class="col-md-12">
-                                    <input name="Image" class="form-control" type="file" />
-                                    <span asp-validation-for="Image" class="text-danger"></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-horizontal">
-                            <div class="form-group">
-                                <div class="col-md-12">
-                                    <label class="control-label">DateOfBirth</label>
-                                </div>
-                                <div class="col-md-12">
-                                    <input name="DateOfBirth" class="form-control" />
-                                    <span asp-validation-for="DateOfBirth" class="text-danger"></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-horizontal">
-                            <div class="form-group">
-                                <div class="col-md-12">
-                                    <label class="control-label">Gender</label>
-                                </div>
-                                <div class="col-md-12">
-                                    <input name="Gender" class="form-control" />
-                                    <span asp-validation-for="Gender" class="text-danger"></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-horizontal">
-                            <div class="form-group">
-                                <div class="col-md-12">
-                                    <label class="control-label">Code</label>
-                                </div>
-                                <div class="col-md-12">
-                                    <input name="Code" class="form-control" />
-                                    <span asp-validation-for="Code" class="text-danger"></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-horizontal">
-                            <div class="form-group">
-                                <div class="col-md-12">
-                                    <label class="control-label">RefferClientCode</label>
-                                </div>
-                                <div class="col-md-12">
-                                    <input name="RefferClientCode" class="form-control" />
-                                    <span asp-validation-for="RefferClientCode" class="text-danger"></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-horizontal">
-                            <div class="form-group">
-                                <div class="col-md-12">
-                                    <label class="control-label">CartID</label>
-                                </div>
-                                <div class="col-md-12">
-                                    <input name="CartID" class="form-control" />
-                                    <span asp-validation-for="CartID" class="text-danger"></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <input type="submit" value="Create" class="btn btn-default" />
-                    </div>
-                </div>
-
-            }
+        <div class="bg-dark rounded">
+            <p class="nav-link text-white" style="font-size:20px;">Product &nbsp;<i class="fas fa-chevron-right"></i> Create</p>
         </div>
-    </div>
-    
-    <div id="Index" class="tab-pane fade" role="tabpanel" aria-labelledby="index-tab">
-        @Html.ActionLink("Index", "Clients")
+
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Create</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Index</a>
+            </li>
+           
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                @using (Html.BeginForm("Create", "Clients"))
+                {
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-row">
+                                <div class="col-md-4">
+                                    <div class="form-horizontal">
+                                        <div class="form-group">
+                                            <div class="col-md-12">
+                                                <label class="control-label">ClientName</label>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <input name="ClientName" class="form-control" />
+                                                <span asp-validation-for="ClientName" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-horizontal">
+                                        <div class="form-group">
+                                            <div class="col-md-12">
+                                                <label class="control-label">AddressID</label>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <input name="AddressID" class="form-control" />
+                                                <span asp-validation-for="AddressID" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-horizontal">
+                                        <div class="form-group">
+                                            <div class="col-md-12">
+                                                <label class="control-label">PermanentAddressID</label>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <input name="PermanentAddressID" class="form-control" />
+                                                <span asp-validation-for="PermanentAddressID" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-horizontal">
+                                        <div class="form-group">
+                                            <div class="col-md-12">
+                                                <label class="control-label">TemporaryAddressID</label>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <input name="TemporaryAddressID" class="form-control" />
+                                                <span asp-validation-for="TemporaryAddressID" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-horizontal">
+                                        <div class="form-group">
+                                            <div class="col-md-12">
+                                                <label class="control-label">PhoneNo</label>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <input name="PhoneNo" class="form-control" />
+                                                <span asp-validation-for="PhoneNo" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-horizontal">
+                                        <div class="form-group">
+                                            <div class="col-md-12">
+                                                <label class="control-label">Location</label>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <input name="Location" class="form-control" />
+                                                <span asp-validation-for="Location" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-horizontal">
+                                        <div class="form-group">
+                                            <div class="col-md-12">
+                                                <label class="control-label">Email</label>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <input name="Email" class="form-control" />
+                                                <span asp-validation-for="Email" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-horizontal">
+                                        <div class="form-group">
+                                            <div class="col-md-12">
+                                                <label class="control-label">Password</label>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <input name="Password" class="form-control" />
+                                                <span asp-validation-for="Password" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-horizontal">
+                                        <div class="form-group">
+                                            <div class="col-md-12">
+                                                <label class="control-label">Role</label>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <input name="Role" class="form-control" />
+                                                <span asp-validation-for="Role" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-horizontal">
+                                        <div class="form-group">
+                                            <div class="col-md-12">
+                                                <label class="control-label">Image</label>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <input name="Image" class="form-control" type="file" />
+                                                <span asp-validation-for="Image" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-horizontal">
+                                        <div class="form-group">
+                                            <div class="col-md-12">
+                                                <label class="control-label">DateOfBirth</label>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <input name="DateOfBirth" class="form-control" />
+                                                <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-horizontal">
+                                        <div class="form-group">
+                                            <div class="col-md-12">
+                                                <label class="control-label">Gender</label>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <input name="Gender" class="form-control" />
+                                                <span asp-validation-for="Gender" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-horizontal">
+                                        <div class="form-group">
+                                            <div class="col-md-12">
+                                                <label class="control-label">Code</label>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <input name="Code" class="form-control" />
+                                                <span asp-validation-for="Code" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-horizontal">
+                                        <div class="form-group">
+                                            <div class="col-md-12">
+                                                <label class="control-label">RefferClientCode</label>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <input name="RefferClientCode" class="form-control" />
+                                                <span asp-validation-for="RefferClientCode" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-horizontal">
+                                        <div class="form-group">
+                                            <div class="col-md-12">
+                                                <label class="control-label">CartID</label>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <input name="CartID" class="form-control" />
+                                                <span asp-validation-for="CartID" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="submit" value="Create" class="btn btn-default" />
+                                </div>
+                            </div>}
+            </div>
+            <div class="tab-pane fade show" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                <h1>Binod</h1>
+               
+            </div>
+           
+        </div>
 
     </div>
-</div>
         @section Scripts {
             @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
         }
